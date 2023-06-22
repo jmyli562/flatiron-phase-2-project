@@ -1,0 +1,6 @@
+.navbar-nav a {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}

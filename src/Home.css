@@ -1,12 +1,21 @@
 p {
+  padding-top: 50px;
   font-size: 30px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
   inline-size: 1500px;
 }
 
+#wrapper {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 button {
+  height: 50px;
   width: 100px;
-  margin: 0 auto;
-  display: block;
+  background-color: rgb(255, 255, 255);
 }

@@ -2,12 +2,12 @@ import "./App.css";
 import React from "react";
 import Home from "./Home";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import NavBar from "./NavBar";
+import Navigation from "./Navigation";
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <NavBar />
+        <Navigation />
         <Switch>
           <Route exact path="/home">
             <Home />

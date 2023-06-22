@@ -15,7 +15,9 @@ function Home() {
         through exercise. Start your journey to a stronger, fitter, and
         healthier you right here. Let's sweat, smile, and succeed together!
       </p>
-      <button>Get started now!</button>
+      <div id="wrapper">
+        <button>Get started now!</button>
+      </div>
     </div>
   );
 }
