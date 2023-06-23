@@ -1,13 +1,32 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Home from "./Home";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navigation from "./Navigation";
 import Register from "./Register";
+
 function App() {
+  const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:3001/users")
+      .then((resp) => resp.json())
+      .then((users) => setUsers(users));
+  }, []);
+
+  function userExists(email) {
+    let exists = false;
+    users.forEach((user) => {
+      if (user.email === email) {
+        exists = true;
+      }
+    });
+
+    return exists;
+  }
 
   function handleUsername(e) {
     setUsername(() => e.target.value);
@@ -23,13 +42,21 @@ function App() {
 
   function createUser(e) {
     e.preventDefault();
-    const newUser = {
-      username: username,
-      email: email,
-      password: password,
-    };
 
-    console.log(newUser);
+    if (userExists(email)) {
+      window.alert(
+        "An account under this email already exists. Please use a different email"
+      );
+      setUsername("");
+      setPassword("");
+      setEmail("");
+    } else {
+      const newUser = {
+        username: username,
+        email: email,
+        password: password,
+      };
+    }
   }
 
   return (
