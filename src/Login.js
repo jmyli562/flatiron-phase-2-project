@@ -1,6 +1,7 @@
 import React from "react";
 
 function Login() {
+  //conditional rendering using the isLoggedIn state
   return (
     <>
       <form action="/action_page.php">

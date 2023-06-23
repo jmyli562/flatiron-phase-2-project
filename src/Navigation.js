@@ -25,6 +25,9 @@ function Navigation() {
               <NavLink exact to="/home">
                 Home
               </NavLink>
+              <NavLink exact to="/register">
+                Register
+              </NavLink>
               <NavLink to="/exercises">Excercises</NavLink>
               <NavLink to="/exercise-form">Create your Routine</NavLink>
             </Nav>
