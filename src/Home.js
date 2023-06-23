@@ -16,6 +16,7 @@ function Home() {
         healthier you right here. Let's sweat, smile, and succeed together!
       </p>
       <div id="wrapper">
+        {/* if the user is logged in clicking get started now will take the user to register else if they are logged in take straight to exercises  */}
         <button className="home-button">Get started now!</button>
       </div>
     </div>

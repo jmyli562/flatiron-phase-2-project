@@ -1,13 +1,14 @@
 label,
-input {
+.register-form input {
   margin: auto;
   display: block;
-}
-
-label {
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .register-form {
   text-align: center;
+}
+
+h1 {
+  margin-top: 50px;
 }

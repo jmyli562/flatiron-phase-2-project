@@ -1,5 +1,4 @@
 import React from "react";
-import "./Login.css";
 function Login() {
   //conditional rendering using the isLoggedIn state
   return (

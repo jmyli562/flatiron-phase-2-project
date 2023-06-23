@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navigation.css";
+import Login from "./Login";
 function Navigation() {
   return (
     <>
@@ -31,6 +32,7 @@ function Navigation() {
               <NavLink to="/routines">Create your Routine</NavLink>
             </Nav>
           </Navbar.Collapse>
+          <Login />
         </Container>
       </Navbar>
     </>
