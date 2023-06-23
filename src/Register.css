@@ -1,0 +1,13 @@
+label,
+input {
+  margin: auto;
+  display: block;
+}
+
+label {
+  margin-bottom: 20px;
+}
+
+.register-form {
+  text-align: center;
+}

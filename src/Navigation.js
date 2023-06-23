@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navigation.css";
-import Login from "./Login";
 function Navigation() {
   return (
     <>
@@ -29,10 +28,9 @@ function Navigation() {
                 Register
               </NavLink>
               <NavLink to="/exercises">Excercises</NavLink>
-              <NavLink to="/exercise-form">Create your Routine</NavLink>
+              <NavLink to="/routines">Create your Routine</NavLink>
             </Nav>
           </Navbar.Collapse>
-          <Login />
         </Container>
       </Navbar>
     </>

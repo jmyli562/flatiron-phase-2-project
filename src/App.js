@@ -19,6 +19,11 @@ function App() {
             <Register />
           </Route>
         </Switch>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </div>
   );

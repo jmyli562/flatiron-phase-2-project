@@ -16,7 +16,7 @@ function Home() {
         healthier you right here. Let's sweat, smile, and succeed together!
       </p>
       <div id="wrapper">
-        <button>Get started now!</button>
+        <button className="home-button">Get started now!</button>
       </div>
     </div>
   );
