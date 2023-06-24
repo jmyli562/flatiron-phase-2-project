@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.css";
+import { useHistory } from "react-router-dom";
 function Home() {
+  let history = useHistory();
   return (
     <div>
       <h1>Excercise Guru</h1>
@@ -17,7 +19,14 @@ function Home() {
       </p>
       <div id="wrapper">
         {/* if the user is logged in clicking get started now will take the user to register else if they are logged in take straight to exercises  */}
-        <button className="home-button">Get started now!</button>
+        <button
+          className="home-button"
+          onClick={() => {
+            history.push("/register");
+          }}
+        >
+          Get started now!
+        </button>
       </div>
     </div>
   );
