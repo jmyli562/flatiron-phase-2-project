@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "./context/AppProvider";
 import ExcerciseCard from "./ExerciseCard";
+import "./ExcerciseCard.css";
 function Excercises() {
   const { exercises } = useContext(AppContext);
 
@@ -18,7 +19,15 @@ function Excercises() {
   return (
     <>
       <h1>Exercise Page</h1>
-      {exerciseList}
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search for a exercise..."
+          name="email"
+        ></input>
+        <button>Search</button>
+      </div>
+      <div className="card-container">{exerciseList}</div>
     </>
   );
 }
