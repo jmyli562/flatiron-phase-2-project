@@ -1,12 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Home from "./Home";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-} from "react-router-dom";
+import { withRouter, Switch, Route, useHistory } from "react-router-dom";
 import Navigation from "./Navigation";
 import AccountCreated from "./AccountCreated.js";
 import Register from "./Register";
@@ -83,39 +78,37 @@ function App() {
 
   return (
     <div>
-      <Router>
-        <Navigation />
-        <Switch>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-        </Switch>
-        <Switch>
-          <Route exact path="/register">
-            <Register
-              username={username}
-              email={email}
-              password={password}
-              createUser={createUser}
-              handleUsername={handleUsername}
-              handlePassword={handlePassword}
-              handleEmail={handleEmail}
-            />
-          </Route>
-        </Switch>
-        <Switch>
-          <Route path="/register/success">
-            <AccountCreated />
-          </Route>
-        </Switch>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
+      <Navigation />
+      <Switch>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path="/register">
+          <Register
+            username={username}
+            email={email}
+            password={password}
+            createUser={createUser}
+            handleUsername={handleUsername}
+            handlePassword={handlePassword}
+            handleEmail={handleEmail}
+          />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path="/register/success">
+          <AccountCreated />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
