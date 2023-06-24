@@ -1,11 +1,23 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Home from "./Home";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory,
+} from "react-router-dom";
 import Navigation from "./Navigation";
+import AccountCreated from "./AccountCreated.js";
 import Register from "./Register";
 
 function App() {
+  let history = useHistory();
+
+  const redirectUser = () => {
+    history.push("/register/success");
+  };
+
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -47,21 +59,31 @@ function App() {
       window.alert(
         "An account under this email already exists. Please use a different email"
       );
-      setUsername("");
-      setPassword("");
-      setEmail("");
     } else {
       const newUser = {
         username: username,
         email: email,
         password: password,
       };
+
+      fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      })
+        .then((resp) => resp.json())
+        .then(() => redirectUser());
     }
+    setUsername("");
+    setPassword("");
+    setEmail("");
   }
 
   return (
     <div>
-      <BrowserRouter>
+      <Router>
         <Navigation />
         <Switch>
           <Route exact path="/home">
@@ -82,11 +104,16 @@ function App() {
           </Route>
         </Switch>
         <Switch>
+          <Route path="/register/success">
+            <AccountCreated />
+          </Route>
+        </Switch>
+        <Switch>
           <Route exact path="/">
             <Home />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }

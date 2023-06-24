@@ -5,6 +5,24 @@
       "username": "John",
       "email": "johndoe123@gmail.com",
       "password": "12345678"
+    },
+    {
+      "username": "jmyli562",
+      "email": "jmyli562@gmail.com",
+      "password": "feagfagaefaefa",
+      "id": 2
+    },
+    {
+      "username": "fawefaewf",
+      "email": "feawd",
+      "password": "eafaefeA",
+      "id": 3
+    },
+    {
+      "username": "faefaewfea",
+      "email": "feafeaw",
+      "password": "efawfcacd",
+      "id": 4
     }
   ]
 }
