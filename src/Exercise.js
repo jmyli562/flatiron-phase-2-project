@@ -4,7 +4,7 @@ import ExcerciseCard from "./ExerciseCard";
 function Excercises() {
   const { exercises } = useContext(AppContext);
 
-  const exerciseList = exercises.map((exercise) => {
+  const exerciseList = exercises[0].map((exercise) => {
     return (
       <ExcerciseCard
         name={exercise.name}

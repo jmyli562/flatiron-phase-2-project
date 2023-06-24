@@ -1,0 +1,17 @@
+.exercise-card {
+  display: inline-block;
+  justify-content: space-between;
+  width: 400px;
+  padding: 50px;
+  border: 1px solid #c9c9c9;
+  text-align: center;
+  background-color: antiquewhite;
+  margin: 100px auto 0;
+}
+
+.card-container {
+  width: 100%;
+  padding-left: 35px;
+  display: flex;
+  grid-template-columns: repeat (5, 1fr);
+}
