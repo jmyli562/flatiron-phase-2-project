@@ -1,19 +1,18 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Home from "./Home";
 import { withRouter, Switch, Route, useHistory } from "react-router-dom";
 import Navigation from "./Navigation";
 import AccountCreated from "./AccountCreated.js";
 import Register from "./Register";
+import { AppContext } from "./context/AppProvider";
 
 function App() {
   let history = useHistory();
-
+  const { users, setUsers } = useContext(AppContext);
   const redirectUser = () => {
     history.push("/register/success");
   };
-
-  const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
