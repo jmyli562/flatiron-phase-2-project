@@ -4,3 +4,7 @@
   justify-content: space-between;
   list-style-type: none;
 }
+
+.navbar input {
+  margin-bottom: 20px;
+}

@@ -6,10 +6,10 @@ import Navigation from "./Navigation";
 import AccountCreated from "./AccountCreated.js";
 import Register from "./Register";
 import { AppContext } from "./context/AppProvider";
-
+import Excercises from "./Exercise.js";
 function App() {
   let history = useHistory();
-  const { users, setUsers } = useContext(AppContext);
+  const { users, setUsers, exercises, setExercises } = useContext(AppContext);
   const redirectUser = () => {
     history.push("/register/success");
   };
@@ -21,7 +21,13 @@ function App() {
     fetch("http://localhost:3001/users")
       .then((resp) => resp.json())
       .then((users) => setUsers(users));
-  }, []);
+  }, [setUsers]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/exercises")
+      .then((resp) => resp.json())
+      .then((exercises) => setExercises(exercises));
+  }, [setExercises]);
 
   function userExists(email) {
     let exists = false;
@@ -94,6 +100,11 @@ function App() {
             handlePassword={handlePassword}
             handleEmail={handleEmail}
           />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path="/exercises">
+          <Excercises />
         </Route>
       </Switch>
       <Switch>

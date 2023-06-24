@@ -7,6 +7,7 @@ function AppProvider({ children }) {
   const [currUser, setCurrUser] = useState("");
   const [currUserPass, setPassword] = useState("");
   const [isLoggedIn, setLogin] = useState(false);
+  const [exercises, setExercises] = useState([]);
   const value = {
     currUser,
     setCurrUser,
@@ -16,6 +17,8 @@ function AppProvider({ children }) {
     setUsers,
     isLoggedIn,
     setLogin,
+    exercises,
+    setExercises,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

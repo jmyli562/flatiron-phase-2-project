@@ -17,6 +17,10 @@ function Login() {
     users.forEach((user) => {
       if (user.username === currUser && user.password === currUserPass) {
         setLogin(() => !isLoggedIn);
+      } else {
+        window.alert(
+          "An account with that username or password does not exist. Please make a account or try again"
+        );
       }
     });
   }
@@ -25,7 +29,10 @@ function Login() {
   return (
     <>
       {isLoggedIn ? (
-        <p className="login-text">Logged in as {currUser}!</p>
+        <>
+          <p className="login-text">Logged in as {currUser}!</p>
+          <button>Logout</button>
+        </>
       ) : (
         <form action="/action_page.php" onSubmit={authenticateUser}>
           <label for="username">
