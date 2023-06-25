@@ -8,6 +8,9 @@ function AppProvider({ children }) {
   const [currUserPass, setPassword] = useState("");
   const [isLoggedIn, setLogin] = useState(false);
   const [exercises, setExercises] = useState([]);
+  const [search, setSearch] = useState(""); //search term that the user will filter the exercises by
+  const [targetFilter, setTargetFilter] = useState("");
+  const [eqiupmentFilter, setEquipmentFilter] = useState("");
   const value = {
     currUser,
     setCurrUser,

@@ -21,13 +21,19 @@ function App() {
     fetch("http://localhost:3001/users")
       .then((resp) => resp.json())
       .then((users) => setUsers(users));
-  }, [setUsers]);
+  }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/exercises")
+    fetch("https://exercisedb.p.rapidapi.com/exercises", {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+      },
+    })
       .then((resp) => resp.json())
       .then((exercises) => setExercises(exercises));
-  }, [setExercises]);
+  }, []);
 
   function userExists(email) {
     let exists = false;
