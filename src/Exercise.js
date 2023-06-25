@@ -13,6 +13,37 @@ function Excercises() {
     setEquipmentFilter,
   } = useContext(AppContext);
 
+  console.log("Search:", search);
+  console.log("targetFilter:", targetFilter);
+  console.log("equipmentFilter:", equipmentFilter);
+
+  const filter = exercises.filter((exercise) => {
+    if (
+      search &&
+      exercise.name.toLowerCase().indexOf(search.toLowerCase()) === -1
+    ) {
+      return false;
+    }
+
+    if (
+      targetFilter &&
+      targetFilter !== "none" &&
+      exercise.target.toLowerCase() != targetFilter.toLowerCase()
+    ) {
+      return false;
+    }
+
+    if (
+      equipmentFilter &&
+      equipmentFilter !== "none" &&
+      exercise.equipment.toLowerCase() !== equipmentFilter.toLowerCase()
+    ) {
+      return false;
+    }
+
+    return true;
+  });
+
   const exerciseList = exercises.map((exercise) => {
     return (
       <ExcerciseCard
@@ -31,19 +62,25 @@ function Excercises() {
         <input
           type="text"
           placeholder="Search for a exercise..."
-          name="email"
+          name="search"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
         ></input>
         <button>Search</button>
         <span>Filter Excercise by Target</span>
         <select
-          name="cars"
-          id="cars"
+          name="target"
+          id="target"
           value={targetFilter}
-          onChange={(e) => setTargetFilter(e.target.value)}
+          onChange={(e) => {
+            setTargetFilter(e.target.value);
+          }}
         >
-          <option value="none">none</option>
+          <option value="none" selected>
+            none
+          </option>
           <option value="abductors">abductors</option>
           <option value="abs">abs</option>
           <option value="adductors">adductors</option>
@@ -66,12 +103,16 @@ function Excercises() {
         </select>
         <span>Filter Exercise by Equipment</span>
         <select
-          name="cars"
-          id="cars"
+          name="equipment"
+          id="equipment"
           value={equipmentFilter}
-          onChange={(e) => setEquipmentFilter(e.target.value)}
+          onChange={(e) => {
+            setEquipmentFilter(e.target.value);
+          }}
         >
-          <option value="none">none</option>
+          <option value="none" selected>
+            none
+          </option>
           <option value="assisted">assisted</option>
           <option value="band">band</option>
           <option value="barbell">barbell</option>
@@ -101,7 +142,20 @@ function Excercises() {
           <option value="wheel roller">wheel roller</option>
         </select>
       </div>
-      <div className="card-container">{exerciseList}</div>
+      <div className="card-container">
+        {search === "" && targetFilter === "none" && equipmentFilter === "none"
+          ? exerciseList
+          : filter.map((exercise) => {
+              return (
+                <ExcerciseCard
+                  name={exercise.name}
+                  img={exercise.gifUrl}
+                  targetedArea={exercise.target}
+                  equipmentNeeded={exercise.equipment}
+                ></ExcerciseCard>
+              );
+            })}
+      </div>
     </>
   );
 }

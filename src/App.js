@@ -6,7 +6,7 @@ import Navigation from "./Navigation";
 import AccountCreated from "./AccountCreated.js";
 import Register from "./Register";
 import { AppContext } from "./context/AppProvider";
-import Excercises from "./Exercise.js";
+import Excercise from "./Exercise.js";
 function App() {
   let history = useHistory();
   const { users, setUsers, exercises, setExercises } = useContext(AppContext);
@@ -110,7 +110,7 @@ function App() {
       </Switch>
       <Switch>
         <Route exact path="/exercises">
-          <Excercises />
+          <Excercise />
         </Route>
       </Switch>
       <Switch>
