@@ -1,4 +1,5 @@
 import React from "react";
+import ToggleButton from "./ToggleButton";
 function ExcerciseCard({
   name,
   img,
@@ -12,7 +13,7 @@ function ExcerciseCard({
       <img src={img} alt="exercise-img" width="200px" height="200px"></img>
       <h4>{"Targets:" + targetedArea}</h4>
       <h3>{"Equipment needed: " + equipmentNeeded}</h3>
-      <button onClick={saveExercises}>Save Exercise</button>
+      <ToggleButton saveExercises={saveExercises}></ToggleButton>
     </div>
   );
 }

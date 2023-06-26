@@ -3,6 +3,7 @@ import { AppContext } from "./context/AppProvider";
 import ExcerciseCard from "./ExerciseCard";
 import "./ExcerciseCard.css";
 function Excercises() {
+  const { savedExercises, setSavedExercises } = useContext(AppContext);
   function saveExercises(e) {
     let exerciseName = e.target.parentElement.children[0].textContent;
     exerciseName = exerciseName.slice(exerciseName.indexOf(":") + 1).trim();
@@ -14,6 +15,14 @@ function Excercises() {
     exerciseEquipment = exerciseEquipment
       .slice(exerciseEquipment.indexOf(":") + 1)
       .trim();
+
+    const newExercise = {
+      name: exerciseName,
+      target: exerciseTarget,
+      equipment: exerciseEquipment,
+    };
+
+    setSavedExercises(() => [...savedExercises, newExercise]);
   }
   const {
     exercises,
