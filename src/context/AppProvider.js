@@ -11,6 +11,7 @@ function AppProvider({ children }) {
   const [search, setSearch] = useState(""); //search term that the user will filter the exercises by
   const [targetFilter, setTargetFilter] = useState("");
   const [equipmentFilter, setEquipmentFilter] = useState("");
+  const [savedExercises, setSavedExercises] = useState([]);
   const value = {
     currUser,
     setCurrUser,
@@ -28,6 +29,8 @@ function AppProvider({ children }) {
     setTargetFilter,
     equipmentFilter,
     setEquipmentFilter,
+    savedExercises,
+    setSavedExercises,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

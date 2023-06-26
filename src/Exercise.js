@@ -3,6 +3,18 @@ import { AppContext } from "./context/AppProvider";
 import ExcerciseCard from "./ExerciseCard";
 import "./ExcerciseCard.css";
 function Excercises() {
+  function saveExercises(e) {
+    let exerciseName = e.target.parentElement.children[0].textContent;
+    exerciseName = exerciseName.slice(exerciseName.indexOf(":") + 1).trim();
+    let exerciseTarget = e.target.parentElement.children[2].textContent;
+    exerciseTarget = exerciseTarget
+      .slice(exerciseTarget.indexOf(":") + 1)
+      .trim();
+    let exerciseEquipment = e.target.parentElement.children[3].textContent;
+    exerciseEquipment = exerciseEquipment
+      .slice(exerciseEquipment.indexOf(":") + 1)
+      .trim();
+  }
   const {
     exercises,
     search,
@@ -12,10 +24,6 @@ function Excercises() {
     equipmentFilter,
     setEquipmentFilter,
   } = useContext(AppContext);
-
-  console.log("Search:", search);
-  console.log("targetFilter:", targetFilter);
-  console.log("equipmentFilter:", equipmentFilter);
 
   const filter = exercises.filter((exercise) => {
     if (
@@ -28,7 +36,7 @@ function Excercises() {
     if (
       targetFilter &&
       targetFilter !== "none" &&
-      exercise.target.toLowerCase() != targetFilter.toLowerCase()
+      exercise.target.toLowerCase() !== targetFilter.toLowerCase()
     ) {
       return false;
     }
@@ -51,6 +59,7 @@ function Excercises() {
         img={exercise.gifUrl}
         targetedArea={exercise.target}
         equipmentNeeded={exercise.equipment}
+        saveExercises={saveExercises}
       ></ExcerciseCard>
     );
   });
@@ -59,6 +68,7 @@ function Excercises() {
     <>
       <h1>Exercise Page</h1>
       <div className="search-container">
+        <span>Filter Excercise by name:</span>
         <input
           type="text"
           placeholder="Search for a exercise..."
@@ -68,8 +78,7 @@ function Excercises() {
             setSearch(e.target.value);
           }}
         ></input>
-        <button>Search</button>
-        <span>Filter Excercise by Target</span>
+        <span>Filter Excercise by Target:</span>
         <select
           name="target"
           id="target"
@@ -101,7 +110,7 @@ function Excercises() {
           <option value="triceps">triceps</option>
           <option value="upper back">upper back</option>
         </select>
-        <span>Filter Exercise by Equipment</span>
+        <span>Filter Exercise by Equipment:</span>
         <select
           name="equipment"
           id="equipment"
@@ -152,6 +161,7 @@ function Excercises() {
                   img={exercise.gifUrl}
                   targetedArea={exercise.target}
                   equipmentNeeded={exercise.equipment}
+                  saveExercises={saveExercises}
                 ></ExcerciseCard>
               );
             })}
