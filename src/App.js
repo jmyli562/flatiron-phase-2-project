@@ -6,6 +6,7 @@ import Navigation from "./Navigation";
 import AccountCreated from "./AccountCreated.js";
 import Register from "./Register";
 import { AppContext } from "./context/AppProvider";
+import Routines from "./Routines";
 import Excercise from "./Exercise.js";
 function App() {
   let history = useHistory();
@@ -116,6 +117,11 @@ function App() {
       <Switch>
         <Route exact path="/register/success">
           <AccountCreated />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path="/routines">
+          <Routines />
         </Route>
       </Switch>
       <Switch>

@@ -26,7 +26,7 @@ function ToggleButton({ saveExercises }) {
         }
       }}
     >
-      {toggle ? "Saved" : "Save Exercise"}
+      {toggle ? "Remove Exercise" : "Save Exercise"}
     </button>
   );
 }
