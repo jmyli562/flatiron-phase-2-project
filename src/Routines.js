@@ -1,5 +1,6 @@
 import React from "react";
 import RoutineInfo from "./RoutineInfo";
+import "./RoutineInfo.css";
 function Routines() {
   const weekdays = [
     "Monday",
@@ -14,17 +15,18 @@ function Routines() {
   const weekdayList = weekdays.map((weekday) => {
     return (
       <>
-        <li>{weekday}</li>
+        <span>{weekday}</span>
         <RoutineInfo />
       </>
     );
   });
   return (
-    <div>
+    <div className="routine-container">
       <h1>Create a Routine</h1>
       <div>
-        <h2>Settings</h2>
-        <ul>{weekdayList}</ul>
+        <div className="routine-list">
+          <ul>{weekdayList}</ul>
+        </div>
       </div>
     </div>
   );
