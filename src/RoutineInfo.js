@@ -16,7 +16,7 @@ function RoutineInfo() {
     return <option value={exercise.name}>{exercise.name}</option>;
   });
   return (
-    <div>
+    <>
       <div className="exercise-routine">
         <span>Exercise name: </span>
         <select name="saved-exercises" id="exercises">
@@ -42,7 +42,7 @@ function RoutineInfo() {
         <button onClick={handeClick}> + Add new Exercise </button>
       </div>
       {newExercise}
-    </div>
+    </>
   );
 }
 

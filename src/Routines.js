@@ -14,20 +14,20 @@ function Routines() {
 
   const weekdayList = weekdays.map((weekday) => {
     return (
-      <>
-        <span>{weekday}</span>
+      <div className={weekday}>
+        <h3>{weekday}</h3>
         <RoutineInfo />
-      </>
+      </div>
     );
   });
   return (
     <div className="routine-container">
       <h1>Create a Routine</h1>
-      <div>
+      <>
         <div className="routine-list">
           <ul>{weekdayList}</ul>
         </div>
-      </div>
+      </>
     </div>
   );
 }
