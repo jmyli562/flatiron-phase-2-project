@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "./context/AppProvider";
 import RoutineInfo from "./RoutineInfo";
 import "./RoutineInfo.css";
 function Routines() {
+  const { isLoggedIn, users, currUser } = useContext(AppContext);
+  //console.log(users);
+  function getUserId() {
+    let id;
+    users.forEach((user) => {
+      if (currUser === user.username) {
+        id = user.id;
+      }
+    });
+    return id;
+  }
   const weekdays = [
     "Monday",
     "Tuesday",
@@ -65,35 +77,21 @@ function Routines() {
         }
       }
     });
+    //user should not be able to save their routine if not logged in, prompt the user to log in or register an account
+    if (!isLoggedIn) {
+      window.alert("Please log in or register an account to save this routine");
+    } else {
+      //past this point the user should be logged in
+      const id = getUserId();
 
-    /*
-
-    const routines = document.getElementsByClassName("Monday");
-    const emptyObj = {};
-    for (let child of routines[0].children) {
-      for (let exercise of child.children) {
-        if (exercise.tagName === "SELECT" && exercise.id === "exercises") {
-          //console.log(exercise);
-          emptyObj.name = exercise.value;
-          //console.log(emptyObj);
-        } else if (
-          exercise.tagName === "SELECT" &&
-          exercise.id === "duration"
-        ) {
-          //console.log(exercise);
-          emptyObj.duration = exercise.value;
-          //console.log(emptyObj);
-          tempObj.Routines[0].Exercises.push(
-            JSON.parse(JSON.stringify(emptyObj))
-          );
-          //console.log(tempObj);
-        }
-      }
+      fetch(`http://localhost:3001/users/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(tempObj),
+      });
     }
-
-    */
-
-    console.log(tempObj);
   }
 
   const weekdayList = weekdays.map((weekday) => {
