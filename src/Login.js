@@ -32,8 +32,10 @@ function Login() {
     <>
       {isLoggedIn ? (
         <>
-          <p className="login-text">Logged in as {currUser}!</p>
-          <button onClick={handleLogout}>Logout</button>
+          <p className="login-text">Welcome, {currUser}!</p>
+          <button className="log-out-button" onClick={handleLogout}>
+            Logout
+          </button>
         </>
       ) : (
         <form action="/action_page.php" onSubmit={authenticateUser}>

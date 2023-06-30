@@ -125,6 +125,10 @@ function App() {
         </Route>
       </Switch>
       <Switch>
+        <Route exact path="/routines/saved" />
+        <SavedRoutines />
+      </Switch>
+      <Switch>
         <Route exact path="/">
           <Home />
         </Route>
