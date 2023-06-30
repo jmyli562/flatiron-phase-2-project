@@ -97,7 +97,7 @@ function Routines() {
   const weekdayList = weekdays.map((weekday) => {
     return (
       <div className={weekday}>
-        <h3>{weekday}</h3>
+        <h2>{weekday}</h2>
         <RoutineInfo />
       </div>
     );

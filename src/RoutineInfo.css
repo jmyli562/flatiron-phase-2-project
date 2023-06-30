@@ -9,3 +9,9 @@
 .routine-container {
   text-align: left;
 }
+
+.save-routine {
+  text-align: center;
+  margin: auto;
+  display: flex;
+}
