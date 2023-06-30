@@ -50,9 +50,9 @@ npm run build
 Usage
 Provide examples or instructions on how to use your project. Include any relevant code snippets or configurations.
 
-Contributing
+### Installation
 Explain how others can contribute to your project. Provide guidelines, code style conventions, and instructions on how to submit pull requests.
 
-License
+###License
 Specify the license under which your project is distributed. For example, MIT, Apache, or GPL. Include the full license text in a separate LICENSE file if necessary.
 
