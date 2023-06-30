@@ -4,7 +4,6 @@ import RoutineInfo from "./RoutineInfo";
 import "./RoutineInfo.css";
 function Routines() {
   const { isLoggedIn, users, currUser } = useContext(AppContext);
-  //console.log(users);
   function getUserId() {
     let id;
     users.forEach((user) => {

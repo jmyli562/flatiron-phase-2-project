@@ -31,6 +31,7 @@ function Navigation() {
               </NavLink>
               <NavLink to="/exercises">Excercises</NavLink>
               <NavLink to="/routines">Create your Routine</NavLink>
+              <NavLink to="/routines/saved">Saved Routines</NavLink>
             </Nav>
           </Navbar.Collapse>
           <Login />

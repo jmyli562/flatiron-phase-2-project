@@ -8,6 +8,7 @@ import Register from "./Register";
 import { AppContext } from "./context/AppProvider";
 import Routines from "./Routines";
 import Excercise from "./Exercise.js";
+import SavedRoutines from "./SavedRoutines";
 function App() {
   let history = useHistory();
   const { users, setUsers, exercises, setExercises } = useContext(AppContext);
@@ -125,8 +126,9 @@ function App() {
         </Route>
       </Switch>
       <Switch>
-        <Route exact path="/routines/saved" />
-        <SavedRoutines />
+        <Route exact path="/routines/saved">
+          <SavedRoutines />
+        </Route>
       </Switch>
       <Switch>
         <Route exact path="/">
