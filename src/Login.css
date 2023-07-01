@@ -2,7 +2,9 @@
   font-size: 20px;
   color: white;
   text-align: right;
+  padding-top: 2px;
 }
 .log-out-button {
-  margin-top: 5px;
+  margin-bottom: 25px;
+  margin-left: 10px;
 }
