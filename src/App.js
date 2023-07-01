@@ -11,7 +11,15 @@ import Excercise from "./Exercise.js";
 import SavedRoutines from "./SavedRoutines";
 function App() {
   let history = useHistory();
-  const { users, setUsers, exercises, setExercises } = useContext(AppContext);
+  const {
+    users,
+    setUsers,
+    exercises,
+    setExercises,
+    setLogin,
+    isLoggedIn,
+    setCurrUser,
+  } = useContext(AppContext);
   const redirectUser = () => {
     history.push("/register/success");
   };
@@ -23,6 +31,16 @@ function App() {
     fetch("http://localhost:3001/users")
       .then((resp) => resp.json())
       .then((users) => setUsers(users));
+  }, []);
+
+  useEffect(() => {
+    const currLoggedInUser = localStorage.getItem("currUser");
+
+    if (currLoggedInUser) {
+      const foundUser = currLoggedInUser;
+      setCurrUser(() => foundUser);
+      setLogin(() => !isLoggedIn);
+    }
   }, []);
 
   useEffect(() => {

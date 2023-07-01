@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "./context/AppProvider";
 import DisplayRoutine from "./DisplayRoutine";
+
 function SavedRoutines() {
   const { users, currUser, isLoggedIn } = useContext(AppContext);
   let routineArr = [];
@@ -12,7 +13,7 @@ function SavedRoutines() {
 
     routineArr = userArr[0];
 
-    if (routineArr.hasOwnProperty("Routine")) {
+    if (routineArr.hasOwnProperty("Routines")) {
       routineList = routineArr.Routines.map((routine) => {
         return (
           <DisplayRoutine
