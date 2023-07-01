@@ -3,9 +3,6 @@ import { AppContext } from "./context/AppProvider";
 function ToggleButton({ saveExercises }) {
   const [toggle, setToggle] = useState(false);
   const { savedExercises, setSavedExercises } = useContext(AppContext);
-
-  console.log(savedExercises);
-
   function removeExercise(e) {
     let exerciseToRemove = e.target.parentElement.children[0].textContent;
     exerciseToRemove = exerciseToRemove

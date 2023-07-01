@@ -18,6 +18,7 @@ function App() {
     setExercises,
     setLogin,
     isLoggedIn,
+    currUser,
     setCurrUser,
   } = useContext(AppContext);
   const redirectUser = () => {
@@ -31,7 +32,7 @@ function App() {
     fetch("http://localhost:3001/users")
       .then((resp) => resp.json())
       .then((users) => setUsers(users));
-  }, [isLoggedIn]);
+  }, [currUser]);
 
   useEffect(() => {
     const prevLoggedInUser = localStorage.getItem("currUser");
