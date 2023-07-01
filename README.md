@@ -1,11 +1,15 @@
 # Project Name
 
-A brief description of your project.
+*A brief description of your project.*
 
 ## Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Development](#development)
+  - [Build](#build)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -24,7 +28,7 @@ List any prerequisites or dependencies that are required to run your project. Fo
 
 Provide step-by-step instructions on how to install your project locally. Make sure to include all the necessary commands and configurations needed to set up the project successfully.
 
-```bash
+```shell
 # Clone the repository
 git clone https://github.com/your-username/your-project.git
 
@@ -36,23 +40,21 @@ npm install
 Development
 Explain how to run the project in the development mode. Provide instructions on how to start the development server and any other relevant commands.
 
-bash
 Copy code
 # Start the development server
 npm start
 Build
 Explain how to build your project for production. Include any necessary commands or configurations.
 
-bash
 Copy code
 # Create a production build
 npm run build
-Usage
+```
+## Usage
 Provide examples or instructions on how to use your project. Include any relevant code snippets or configurations.
 
-### Installation
+## Contributing
 Explain how others can contribute to your project. Provide guidelines, code style conventions, and instructions on how to submit pull requests.
 
-###License
+## License
 Specify the license under which your project is distributed. For example, MIT, Apache, or GPL. Include the full license text in a separate LICENSE file if necessary.
-
