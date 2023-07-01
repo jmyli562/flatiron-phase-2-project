@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "./context/AppProvider";
 import DisplayRoutine from "./DisplayRoutine";
-
+import "./SavedRoutines.css";
 function SavedRoutines() {
   const { users, currUser, isLoggedIn } = useContext(AppContext);
   let routineArr = [];
@@ -22,10 +22,6 @@ function SavedRoutines() {
           ></DisplayRoutine>
         );
       });
-    } else {
-      window.alert(
-        "You currently do not have any saved routines. Please create a routine in the create a routine tab"
-      );
     }
   }
 

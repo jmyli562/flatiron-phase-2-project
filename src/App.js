@@ -31,13 +31,13 @@ function App() {
     fetch("http://localhost:3001/users")
       .then((resp) => resp.json())
       .then((users) => setUsers(users));
-  }, []);
+  }, [isLoggedIn]);
 
   useEffect(() => {
-    const currLoggedInUser = localStorage.getItem("currUser");
+    const prevLoggedInUser = localStorage.getItem("currUser");
 
-    if (currLoggedInUser) {
-      const foundUser = currLoggedInUser;
+    if (prevLoggedInUser) {
+      const foundUser = prevLoggedInUser;
       setCurrUser(() => foundUser);
       setLogin(() => !isLoggedIn);
     }

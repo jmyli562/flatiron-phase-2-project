@@ -1,9 +1,9 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./DisplayRoutine.css";
 function DisplayRoutine({ day, exercises }) {
   return (
     <div className="routine-list-container">
-      <div>
+      <div className="routine-list-content">
         <h2>{day}</h2>
         {exercises.map((exercise) => {
           return (
