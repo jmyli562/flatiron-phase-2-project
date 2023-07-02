@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch("http://localhost:3001/users")
+      fetch("https://exercise-guru-backend.onrender.com")
         .then((resp) => resp.json())
         .then((users) => setUsers(users));
     }, 5000);
@@ -52,7 +52,7 @@ function App() {
     fetch("https://exercisedb.p.rapidapi.com/exercises", {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "b10112ec47mshba6d6dc16d6aa7bp136cc6jsn7ed46855e4d2",
+        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
       },
     })
