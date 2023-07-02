@@ -52,7 +52,7 @@ function App() {
     fetch("https://exercisedb.p.rapidapi.com/exercises", {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+        "X-RapidAPI-Key": REACT_APP_API_KEY,
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
       },
     })
