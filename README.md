@@ -9,6 +9,7 @@ which is a database of roughly 1,300 exercises. Exercise Guru Hub makes use of t
 - [Getting Started](#getting-started)
   - [Installation](#installation)
 - [Usage](#usage)
+- [Demo video](#demo)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -79,7 +80,10 @@ On the exercise page, you can filter the exercise by name, what muscle the exerc
 On the Create your Routines page, you can select one of your saved Exercises from a dropdown and choose on what day of the week you would like to do that exercise on as well as for how long. To add more than one exercise on a day, you can click the "Add new Exercise" button beside the dropdown and to remove an exercise click "Remove Exercise" on the exercise you want to remove. Once you are done creating your routine, you can save it by clicking on the "Save Routine" button. 
 ![example4](https://github.com/jmyli562/flatiron-phase-2-project/assets/60550632/8775aefe-efb5-4ac1-a7cf-0d16370625b2)
 
-Now you can go to the "Saved Routines" tab on the Navigation bar to view the Routine that you just saved!
+Now you can go to the "Saved Routines" tab on the Navigation bar to view the Routine that you just saved! Please refer to my demo video below if you need any more clarification about 
+
+# Demo Video
+Link to demo video: https://youtu.be/BhrugaiFn3g
 
 ## Contributing
 Pull requests are welcome. If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
