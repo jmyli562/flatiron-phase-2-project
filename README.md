@@ -1,7 +1,7 @@
 # Exercise Guru Hub
 
 My App is called Exercise Guru Hub and it pulls data from an API called Exercises (https://rapidapi.com/apininjas/api/exercises-by-api-ninjas)
-which is a database of roughly 1,300 exercises.
+which is a database of roughly 1,300 exercises. Exercise Guru Hub makes use of the exercise information provided by the API to create a simple routine management system for exercise fanatics who may or may not have the time to create a routine for themselves. 
 
 ## Table of Contents
 
@@ -18,6 +18,10 @@ Exercise Guru Hub is meant to give users of varying exercise experience a way to
 ## Getting Started 
 
 ### Installation
+There is currently no installation needed as my application's frontend is deployed on Netlify while it's backend is handled by Render. You can check it out at https://exercise-guru-hub.netlify.app. However if you would like to access the source code for this project and run it on your local machine, please follow the instructions below.
+
+NOTE: The backend is deployed on the Free tier of Render so if the login or registration page do not work please wait 20-30 seconds for the backend to fully become active.
+
 The project makes use of two seperate github repos, one which houses the source code the other which houses the db.json which we will run json server off of to create a RESTFUL API.
 
 github link tosource code: https://github.com/jmyli562/flatiron-phase-2-project
@@ -75,7 +79,7 @@ On the exercise page, you can filter the exercise by name, what muscle the exerc
 On the Create your Routines page, you can select one of your saved Exercises from a dropdown and choose on what day of the week you would like to do that exercise on as well as for how long. To add more than one exercise on a day, you can click the "Add new Exercise" button beside the dropdown and to remove an exercise click "Remove Exercise" on the exercise you want to remove. Once you are done creating your routine, you can save it by clicking on the "Save Routine" button. 
 ![example4](https://github.com/jmyli562/flatiron-phase-2-project/assets/60550632/8775aefe-efb5-4ac1-a7cf-0d16370625b2)
 
-
+Now you can go to the "Saved Routines" tab on the Navigation bar to view the Routine that you just saved!
 
 ## Contributing
 Pull requests are welcome. If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
