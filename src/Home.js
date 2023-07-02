@@ -5,7 +5,7 @@ function Home() {
   let history = useHistory();
   return (
     <div>
-      <h1>Excercise Guru</h1>
+      <h1>Exercise Guru Hub</h1>
       <p>
         Welcome to our fitness hub, your ultimate resource for exercise
         inspiration and guidance. Whether you're a seasoned athlete or a

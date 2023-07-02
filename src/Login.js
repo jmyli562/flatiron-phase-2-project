@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { AppContext } from "./context/AppProvider";
-import axios from "axios";
 import "./Login.css";
 function Login() {
   const {

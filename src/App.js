@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useMemo } from "react";
 import Home from "./Home";
 import { withRouter, Switch, Route, useHistory } from "react-router-dom";
 import Navigation from "./Navigation";
@@ -29,10 +29,14 @@ function App() {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3001/users")
-      .then((resp) => resp.json())
-      .then((users) => setUsers(users));
-  }, [currUser]);
+    const interval = setInterval(() => {
+      fetch("http://localhost:3001/users")
+        .then((resp) => resp.json())
+        .then((users) => setUsers(users));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const prevLoggedInUser = localStorage.getItem("currUser");

@@ -4,6 +4,7 @@ import DisplayRoutine from "./DisplayRoutine";
 import "./SavedRoutines.css";
 function SavedRoutines() {
   const { users, currUser, isLoggedIn } = useContext(AppContext);
+  console.log(users);
   let routineArr = [];
   let routineList;
   if (isLoggedIn) {

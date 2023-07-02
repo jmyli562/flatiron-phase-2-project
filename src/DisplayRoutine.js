@@ -1,5 +1,6 @@
 import React from "react";
 import "./DisplayRoutine.css";
+import { v4 as uuidv4 } from "uuid";
 function DisplayRoutine({ day, exercises }) {
   return (
     <div className="routine-list-container">
@@ -8,7 +9,7 @@ function DisplayRoutine({ day, exercises }) {
         {exercises.map((exercise) => {
           return (
             <ul class="list-group">
-              <li>
+              <li key={uuidv4()}>
                 {`Exercise name: ` +
                   exercise.name +
                   " Duration: " +
