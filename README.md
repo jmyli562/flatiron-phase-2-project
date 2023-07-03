@@ -1,60 +1,110 @@
-# Project Name
+# Exercise Guru Hub
 
-*A brief description of your project.*
+My App is called Exercise Guru Hub and it pulls data from an API called Exercises (https://rapidapi.com/apininjas/api/exercises-by-api-ninjas)
+which is a database of roughly 1,300 exercises. Exercise Guru Hub makes use of the exercise information provided by the API to create a simple routine management system for exercise fanatics who may or may not have the time to create a routine for themselves. 
 
 ## Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Development](#development)
-  - [Build](#build)
 - [Usage](#usage)
+- [Demo video](#demo)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## About
+Exercise Guru Hub is meant to give users of varying exercise experience a way to plan their exercise routine in a easy to manage way. This app allows users to create a account, view/filter exercises based on name, target muscle and equipment needed, and finally create a custom exercise routine that outlines what exercise to do on what day and for how long. 
 
-Provide a brief overview of your project. Explain its purpose, key features, and any relevant information that will help readers understand what your project is about.
-
-## Getting Started
-
-### Prerequisites
-
-List any prerequisites or dependencies that are required to run your project. For example, Node.js, npm, or any other tools.
+## Getting Started 
 
 ### Installation
+There is currently no installation needed as my application's frontend is deployed on Netlify while it's backend is handled by Render. You can check it out at https://exercise-guru-hub.netlify.app. However if you would like to access the source code for this project and run it on your local machine, please follow the instructions below.
 
-Provide step-by-step instructions on how to install your project locally. Make sure to include all the necessary commands and configurations needed to set up the project successfully.
+NOTE: The backend is deployed on the Free tier of Render so if the login or registration page do not work please wait 20-30 seconds for the backend to fully become active.
 
+The project makes use of two seperate github repos, one which houses the source code the other which houses the db.json which we will run json server off of to create a RESTFUL API.
+
+github link tosource code: https://github.com/jmyli562/flatiron-phase-2-project
+github link to db.json: https://github.com/jmyli562/flatiron-phase-2-project-backened-database
+
+First begin by clicking on the first link and follow the instructions below:
 ```shell
 # Clone the repository
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/jmyli562/flatiron-phase-2-project.git
 
 # Navigate to the project directory
-cd your-project
+cd flatiron-phase-2-project
+
+# Open the project files in VS Code
+code .
 
 # Install dependencies
 npm install
-Development
-Explain how to run the project in the development mode. Provide instructions on how to start the development server and any other relevant commands.
 
-Copy code
+Since this project includes CSS elements styled with Bootstrap, the Boostrap dependency needs to be installed.
+
+# Install bootstrap
+
+npm install react-bootstrap bootstrap
+
 # Start the development server
 npm start
-Build
-Explain how to build your project for production. Include any necessary commands or configurations.
 
-Copy code
-# Create a production build
-npm run build
 ```
-## Usage
-Provide examples or instructions on how to use your project. Include any relevant code snippets or configurations.
+Next click on the github link for the db.json file and git clone it down to your local machine and install json-server globally with the command:
+```shell
+#Install JSON-Server
+
+npm install -g json-server
+
+```
+Next to start the json server type:
+
+```shell
+json-server --watch --port 3001 db.json
+```
+## Comprehensive Usage Guide
+When you first load up my application you should be taken to the home page where you will be greeted by a welcome message. You can begin by clicking on the "Get Started" button which will take you to the registration page to create a account. 
+
+![example1](https://github.com/jmyli562/flatiron-phase-2-project/assets/60550632/a91e6b00-fa7d-41a7-befc-85d2a0ba4126)
+
+After creating a account, you can login using the login text box at the top right of the navigation bar. Once you are authenticated you can navigate to the exercise tab to view all the exercises. 
+
+![example2](https://github.com/jmyli562/flatiron-phase-2-project/assets/60550632/4dcff113-f840-45e7-a4d2-247cf268a581)
+
+On the exercise page, you can filter the exercise by name, what muscle the exercise targets, and what equipment the exercise uses by using the search bar as well as the drop down as shown in the gif below. You can save any exercise you like by clicking on the "Save Exercise" button which will save the exercise for use when you go to create a routine. 
+
+![example3](https://github.com/jmyli562/flatiron-phase-2-project/assets/60550632/23bac4ae-94dd-49bb-8cb9-8d284ee88c31)
+
+On the Create your Routines page, you can select one of your saved Exercises from a dropdown and choose on what day of the week you would like to do that exercise on as well as for how long. To add more than one exercise on a day, you can click the "Add new Exercise" button beside the dropdown and to remove an exercise click "Remove Exercise" on the exercise you want to remove. Once you are done creating your routine, you can save it by clicking on the "Save Routine" button. 
+![example4](https://github.com/jmyli562/flatiron-phase-2-project/assets/60550632/8775aefe-efb5-4ac1-a7cf-0d16370625b2)
+
+Now you can go to the "Saved Routines" tab on the Navigation bar to view the Routine that you just saved! Please refer to my demo video below if you need any more clarification about 
+
+# Demo Video
+Link to demo video: https://youtu.be/BhrugaiFn3g
 
 ## Contributing
-Explain how others can contribute to your project. Provide guidelines, code style conventions, and instructions on how to submit pull requests.
+Pull requests are welcome. If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+Fork the Project
+Create your Feature Branch (git checkout -b feature/NewFeature)
+Commit your Changes (git commit -m 'Add some NewFeature')
+Push to the Branch (git push origin feature/NewFeature)
+Open a Pull Request
+For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
 
 ## License
-Specify the license under which your project is distributed. For example, MIT, Apache, or GPL. Include the full license text in a separate LICENSE file if necessary.
+MIT License
+
+Copyright (c) 2023 Jimmy Li
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
